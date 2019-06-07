@@ -20,3 +20,23 @@ const driversByRevenue = function (drivers) {
     });
     return newDrivers;
 };
+
+const driversByName = function(drivers) {
+  let newDrivers = [...drivers];
+  newDrivers.sort(function(a,b){
+    return a['name'].localeCompare(b['name']);
+  });
+  return newDrivers;
+};
+
+const totalRevenue = function(drivers) {
+    let sum = 0;
+    drivers.forEach(function (driver) {
+      sum += driver['revenue'];
+    });
+    return sum;
+};
+
+const averageRevenue = function(drivers) {
+const average = drivers => drivers.reduce( ( p, c ) => p + c, 0 ) / drivers.length;
+};
